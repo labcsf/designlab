@@ -171,6 +171,63 @@
           <li><strong>Tríadas y Complementarios Divididos:</strong> Tres colores equidistantes (triángulo equilátero) o combinación de un color base con los dos adyacentes a su complementario.</li>
         </ul>
 
+        <!-- EXPLORADOR CÍRCULO CROMÁTICO INTERACTIVO -->
+        <div class="color-wheel-wrapper" style="margin: 35px 0; background: var(--bg-main); border: 1px solid var(--border-color); border-radius: var(--radius); padding: 25px;">
+          <h3 style="margin-top:0; color: var(--secondary);">🎨 Explorador Interactivo del Círculo Cromático (RYB)</h3>
+          <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:20px;">
+            Selecciona un color en la rueda cromática de 12 tonos y elige un esquema de armonía para visualizar sus colores complementarios, análogos, tríadas o complementarios divididos.
+          </p>
+
+          <!-- Botones de Armonías -->
+          <div class="harmony-buttons-group" style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 25px;">
+            <button type="button" class="btn btn-primary harmony-btn active" data-harmony="complementary">Complementario</button>
+            <button type="button" class="btn btn-secondary harmony-btn" data-harmony="analogous">Análogos</button>
+            <button type="button" class="btn btn-secondary harmony-btn" data-harmony="triadic">Tríada</button>
+            <button type="button" class="btn btn-secondary harmony-btn" data-harmony="split">Comp. Dividido</button>
+          </div>
+
+          <!-- Contenedor Principal: Rueda + Panel Informativo -->
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; align-items: center;">
+            
+            <!-- Lado Izquierdo: SVG de la Rueda pre-renderizado -->
+            <div style="display: flex; justify-content: center; align-items: center; background: rgba(0,0,0,0.2); padding: 15px; border-radius: var(--radius); border: 1px solid var(--border-color);">
+              <svg id="wheelSvg" width="300" height="300" viewBox="0 0 300 300" style="max-width: 100%; height: auto; display: block; cursor: pointer;">
+                <g id="wheelSlices">
+                  <!-- Rebanadas continuas exactas (30° cada una) -->
+                  <path class="wheel-slice" data-index="0" d="M 150 150 L 150 40 A 110 110 0 0 1 205 55.36 Z" fill="#ef4444" stroke="#0f172a" stroke-width="2"/>
+                  <path class="wheel-slice" data-index="1" d="M 150 150 L 205 55.36 A 110 110 0 0 1 245.26 95.26 Z" fill="#ea580c" stroke="#0f172a" stroke-width="2"/>
+                  <path class="wheel-slice" data-index="2" d="M 150 150 L 245.26 95.26 A 110 110 0 0 1 260 150 Z" fill="#f97316" stroke="#0f172a" stroke-width="2"/>
+                  <path class="wheel-slice" data-index="3" d="M 150 150 L 260 150 A 110 110 0 0 1 245.26 204.74 Z" fill="#f59e0b" stroke="#0f172a" stroke-width="2"/>
+                  <path class="wheel-slice" data-index="4" d="M 150 150 L 245.26 204.74 A 110 110 0 0 1 205 244.64 Z" fill="#eab308" stroke="#0f172a" stroke-width="2"/>
+                  <path class="wheel-slice" data-index="5" d="M 150 150 L 205 244.64 A 110 110 0 0 1 150 260 Z" fill="#84cc16" stroke="#0f172a" stroke-width="2"/>
+                  <path class="wheel-slice" data-index="6" d="M 150 150 L 150 260 A 110 110 0 0 1 95 244.64 Z" fill="#22c55e" stroke="#0f172a" stroke-width="2"/>
+                  <path class="wheel-slice" data-index="7" d="M 150 150 L 95 244.64 A 110 110 0 0 1 54.74 204.74 Z" fill="#14b8a6" stroke="#0f172a" stroke-width="2"/>
+                  <path class="wheel-slice" data-index="8" d="M 150 150 L 54.74 204.74 A 110 110 0 0 1 40 150 Z" fill="#3b82f6" stroke="#0f172a" stroke-width="2"/>
+                  <path class="wheel-slice" data-index="9" d="M 150 150 L 40 150 A 110 110 0 0 1 54.74 95.26 Z" fill="#6366f1" stroke="#0f172a" stroke-width="2"/>
+                  <path class="wheel-slice" data-index="10" d="M 150 150 L 54.74 95.26 A 110 110 0 0 1 95 55.36 Z" fill="#a855f7" stroke="#0f172a" stroke-width="2"/>
+                  <path class="wheel-slice" data-index="11" d="M 150 150 L 95 55.36 A 110 110 0 0 1 150 40 Z" fill="#ec4899" stroke="#0f172a" stroke-width="2"/>
+                </g>
+                <!-- Centro decorativo -->
+                <circle cx="150" cy="150" r="38" fill="#0f172a" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+              </svg>
+            </div>
+
+            <!-- Lado Derecho: Explicación y Tarjetas de Colores -->
+            <div>
+              <span style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted);">ESQUEMA ACTIVO</span>
+              <h4 id="harmonyTitle" style="font-size: 1.3rem; color: var(--secondary); margin: 5px 0 10px 0;">Color Complementario</h4>
+              <p id="harmonyDesc" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">
+                Genera el máximo contraste óptico e intensidad visual al enfrentar tonos opuestos a 180°.
+              </p>
+
+              <div id="harmonySwatches" style="display: flex; gap: 12px; flex-wrap: wrap;">
+                <!-- Muestras generadas con JS -->
+              </div>
+            </div>
+
+          </div>
+        </div>
+
         <h3>Psicología del Color en Deporte y Eventos Masivos</h3>
         <ul>
           <li><strong>Rojo:</strong> Fuerza, impulso, aceleración cardíaca, combatividad y pasión.</li>
@@ -237,6 +294,55 @@
           <li><strong>Apertura de Diafragma (número f):</strong> Diámetro de entrada de luz y control de Profundidad de Campo (DOF). f/1.4-f/2.8 (poca DOF, bokeh desenfocado en fondo) vs. f/8-f/16 (mucha DOF, nitidez total).</li>
           <li><strong>Sensibilidad ISO:</strong> Amplificación electrónica del sensor. ISO 100-200 (máxima nitidez y fidelidad) vs. ISO 3200-6400 (disparo en penumbra con aumento de ruido digital).</li>
         </ul>
+
+        <!-- SIMULADOR DE CÁMARA INTERACTIVO NATIVO -->
+        <div class="sim-wrapper" style="margin: 35px 0;">
+          <div class="sim-card" style="background: var(--bg-main); border: 1px solid var(--border-color); border-radius: var(--radius); padding: 25px;">
+            <h3 style="margin-top:0; color: var(--secondary);">📷 Simulador Interactivo de Exposición Fotográfica</h3>
+            <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:20px;">Ajusta los controles de la cámara para dominar la exposición, la profundidad de campo y el ruido digital en tiempo real.</p>
+            
+            <div class="sim-view-stage" style="position: relative; width: 100%; height: 280px; background: #000; overflow: hidden; border-radius: 8px; margin-bottom: 20px;">
+              <div id="simBg" style="position: absolute; width: 100%; height: 100%; background: linear-gradient(135deg, #312e81, #1e1b4b, #0f172a); transition: filter 0.1s;"></div>
+              
+              <div id="simLights" style="position: absolute; top:20%; left:20%; width: 60px; height: 60px; background: #f59e0b; border-radius: 50%; opacity: 0.6; filter: blur(5px);"></div>
+              <div id="simLights2" style="position: absolute; top:35%; right:25%; width: 90px; height: 90px; background: #818cf8; border-radius: 50%; opacity: 0.5; filter: blur(5px);"></div>
+
+              <div id="simSubject" style="position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); font-size: 5rem; user-select: none;">🏃</div>
+              
+              <div id="simNoise" style="position: absolute; width:100%; height:100%; pointer-events:none; opacity: 0; background-image: radial-gradient(#fff 1px, transparent 0); background-size: 4px 4px;"></div>
+
+              <div class="sim-hud" style="position: absolute; bottom: 10px; left: 10px; right: 10px; display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.65); backdrop-filter: blur(4px); padding: 8px 15px; border-radius: 6px; font-family: monospace; font-size: 0.85rem;">
+                <div>EV Meter: <span id="evValue" style="color:#10b981; font-weight:bold;">0.0 EV (Correcto)</span></div>
+                <div id="statusBadge" style="color: #38bdf8;">Visor Réflex Vivo</div>
+              </div>
+            </div>
+
+            <div class="sim-controls" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 20px;">
+              <div>
+                <label style="display:block; font-size:0.85rem; font-weight:700; margin-bottom:5px;">Apertura: <span id="lblAperture" style="color:var(--secondary);">f/2.8</span></label>
+                <input type="range" id="sliderAperture" min="0" max="5" step="1" value="1" style="width:100%;">
+                <small style="font-size:0.75rem; color:var(--text-muted);">Controla el desenfoque del fondo (DOF)</small>
+              </div>
+
+              <div>
+                <label style="display:block; font-size:0.85rem; font-weight:700; margin-bottom:5px;">Velocidad: <span id="lblShutter" style="color:var(--secondary);">1/250 s</span></label>
+                <input type="range" id="sliderShutter" min="0" max="5" step="1" value="3" style="width:100%;">
+                <small style="font-size:0.75rem; color:var(--text-muted);">Congela o barre el movimiento</small>
+              </div>
+
+              <div>
+                <label style="display:block; font-size:0.85rem; font-weight:700; margin-bottom:5px;">Sensibilidad ISO: <span id="lblIso" style="color:var(--secondary);">ISO 100</span></label>
+                <input type="range" id="sliderIso" min="0" max="4" step="1" value="0" style="width:100%;">
+                <small style="font-size:0.75rem; color:var(--text-muted);">Amplifica luz (añade grano)</small>
+              </div>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+              <button id="btnCapture" class="btn btn-primary" style="padding:10px 20px; font-size:0.9rem;">📸 Capturar Fotografía</button>
+              <a href="https://www.camerasim.com/camerasim3d" target="_blank" rel="noopener" style="font-size:0.85rem; color:var(--secondary); text-decoration:underline;">Abrir CameraSim 3D Web Externa ↗</a>
+            </div>
+          </div>
+        </div>
 
         <h3>Digitalización e Ingesta de Medios</h3>
         <p>Escaneo plano (1:1, histograma controlado en escala de grises/RGB) vs. Reprografía fotográfica (luces a 45° con polarizador para lienzos grandes). Fórmula de resolución de escaneo: <code>PPI Escaneo = PPI Salida × Factor Ampliación</code>.</p>

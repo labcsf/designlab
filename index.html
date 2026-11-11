@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diseño Gráfico | Portal Educativo</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navegación -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🎨</span>
+        <span class="logo-text">DesignLab<span class="dot">.</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#trimestres">Trimestres</a></li>
+        <li><a href="#herramientas">Laboratorio de Práctica</a></li>
+        <li><a href="#recursos">Recursos</a></li>
+      </ul>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <span class="badge">Aprende, Practica y Crea</span>
+        <h1>Plataforma de Consulta y Práctica de Diseño Gráfico</h1>
+        <p>Espacio abierto donde encontrarás los contenidos de la materia estructurados por trimestre y herramientas interactivas para entrenar tu ojo de diseñador.</p>
+        <div class="hero-buttons">
+          <a href="#trimestres" class="btn btn-primary">Ver Temario por Trimestre</a>
+          <a href="#herramientas" class="btn btn-secondary">Probar Herramientas de Práctica</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="floating-card c1">
+          <span class="card-icon">📐</span>
+          <div class="card-info">
+            <strong>Geometría y Composición</strong>
+            <small>Dominio del espacio</small>
+          </div>
+        </div>
+        <div class="floating-card c2">
+          <span class="card-icon">🔤</span>
+          <div class="card-info">
+            <strong>Kerning Tipográfico</strong>
+            <small>Entrena tu ojo visual</small>
+          </div>
+        </div>
+        <div class="floating-card c3">
+          <span class="card-icon">🎨</span>
+          <div class="card-info">
+            <strong>Teoría del Color</strong>
+            <small>Armonías y contraste</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sección de Trimestres (Contenidos) -->
+  <section id="trimestres" class="section trimestres-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Contenido del Curso</h2>
+        <p>Selecciona un trimestre para consultar las lecciones, guías y materiales correspondientes.</p>
+      </div>
+
+      <div class="trimestres-grid">
+        <!-- Trimestre 1 / Unidad I -->
+        <article class="trimestre-card" id="t1">
+          <div class="card-header t1-header">
+            <span class="trimestre-badge">Trimestre 01 - Unidad I</span>
+            <h3>Fundamentos de Edición Fotográfica, Ilustración y Vectorización</h3>
+            <span class="status-pill status-active">Contenido Completo Disponible</span>
+          </div>
+          <div class="card-body">
+            <p>Accede al material teórico completo que abarca historia, normativas, lenguaje visual, teoría del color, fotografía digital, retoque en Photoshop e ilustración vectorial.</p>
+            <a href="unidad1.html" class="btn btn-primary btn-full">Entrar a la Unidad I →</a>
+          </div>
+        </article>
+
+        <!-- Trimestre 2 -->
+        <article class="trimestre-card" id="t2">
+          <div class="card-header t2-header">
+            <span class="trimestre-badge">Trimestre 02</span>
+            <h3>Tipografía, Identidad Visual y Marca</h3>
+            <span class="status-pill">Pendiente de Contenidos</span>
+          </div>
+          <div class="card-body">
+            <p>Próximamente se integrarán los contenidos correspondientes al segundo trimestre.</p>
+            <ul class="topic-list">
+              <li class="topic-placeholder">Espacio listo para insertar lista de temas...</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Trimestre 3 -->
+        <article class="trimestre-card" id="t3">
+          <div class="card-header t3-header">
+            <span class="trimestre-badge">Trimestre 03</span>
+            <h3>Composición Editorial, UI/UX y Proyecto Final</h3>
+            <span class="status-pill">Pendiente de Contenidos</span>
+          </div>
+          <div class="card-body">
+            <p>Próximamente se integrarán los contenidos correspondientes al tercer trimestre.</p>
+            <ul class="topic-list">
+              <li class="topic-placeholder">Espacio listo para insertar lista de temas...</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Herramientas Estilo Method.ac -->
+  <section id="herramientas" class="section herramientas-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Taller de Práctica Interactiva</h2>
+        <p>Herramientas interactivas diseñadas para afinar la precisión visual en tipografía, color y trazado de vectores.</p>
+      </div>
+
+      <div class="tools-container">
+        <!-- Tabs de Selección de Herramienta -->
+        <div class="tool-tabs">
+          <button class="tab-btn active" data-tab="tab-kerning">🔤 Práctica de Kerning</button>
+          <button class="tab-btn" data-tab="tab-color">🎨 Precisión de Color</button>
+          <button class="tab-btn" data-tab="tab-bezier">✒️ Curva Bézier</button>
+        </div>
+
+        <!-- Herramienta 1: Kerning -->
+        <div class="tool-panel active" id="tab-kerning">
+          <div class="tool-wrapper">
+            <div class="tool-description">
+              <h3>Entrenador de Kerning</h3>
+              <p>Ajusta la posición horizontal de la letra central para lograr un espaciado óptimo entre los caracteres.</p>
+            </div>
+            <div class="kerning-stage">
+              <div class="kerning-word" id="kerningWord">
+                <span class="static-letter">A</span>
+                <span class="movable-letter" id="movableLetter">V</span>
+                <span class="static-letter">O</span>
+              </div>
+            </div>
+            <div class="tool-controls">
+              <label for="kerningSlider">Espaciado (Kerning):</label>
+              <input type="range" id="kerningSlider" min="-50" max="50" value="-30">
+              <div class="action-row">
+                <button class="btn btn-primary" id="btnCheckKerning">Verificar Precisión</button>
+                <div class="score-display" id="kerningScore">Esperando prueba...</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Herramienta 2: Igualar Color -->
+        <div class="tool-panel" id="tab-color">
+          <div class="tool-wrapper">
+            <div class="tool-description">
+              <h3>Igualador de Color (Color Matching)</h3>
+              <p>Ajusta el matiz (Hue) para igualar exactamente el color objetivo que se muestra en el panel de la izquierda.</p>
+            </div>
+            <div class="color-stage">
+              <div class="color-box">
+                <span>Color Objetivo</span>
+                <div class="color-swatch" id="targetColorSwatch"></div>
+              </div>
+              <div class="color-box">
+                <span>Tu Ajuste</span>
+                <div class="color-swatch" id="userColorSwatch"></div>
+              </div>
+            </div>
+            <div class="tool-controls">
+              <label for="hueSlider">Tono / Matiz (Hue):</label>
+              <input type="range" id="hueSlider" min="0" max="360" value="0">
+              <div class="action-row">
+                <button class="btn btn-secondary" id="btnNewColor">Nuevo Color</button>
+                <button class="btn btn-primary" id="btnCheckColor">Verificar Matiz</button>
+                <div class="score-display" id="colorScore">Esperando prueba...</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Herramienta 3: Curva Bézier -->
+        <div class="tool-panel" id="tab-bezier">
+          <div class="tool-wrapper">
+            <div class="tool-description">
+              <h3>Simulador de Curva Bézier</h3>
+              <p>Arrastra los puntos de control en el lienzo canvas para hacer coincidir el trazo con la curva de referencia.</p>
+            </div>
+            <div class="canvas-wrapper">
+              <canvas id="bezierCanvas" width="600" height="300"></canvas>
+            </div>
+            <div class="tool-controls">
+              <div class="action-row">
+                <button class="btn btn-secondary" id="btnResetBezier">Reiniciar Puntos</button>
+                <button class="btn btn-primary" id="btnCheckBezier">Evaluar Trazo</button>
+                <div class="score-display" id="bezierScore">Esperando trazo...</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Recursos Extra -->
+  <section id="recursos" class="section recursos-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Enlaces de Interés y Descargas</h2>
+        <p>Sitios recomendados y herramientas complementarias para enriquecer las clases.</p>
+      </div>
+
+      <div class="recursos-grid">
+        <a href="https://method.ac/" target="_blank" rel="noopener" class="recurso-card">
+          <div class="recurso-icon">🎯</div>
+          <h4>Method of Action</h4>
+          <p>Juegos de diseño interactivos para practicar tipografía, color y curvas Bézier.</p>
+        </a>
+        <a href="https://coolors.co/" target="_blank" rel="noopener" class="recurso-card">
+          <div class="recurso-icon">🎨</div>
+          <h4>Coolors.co</h4>
+          <p>Generador rápido de paletas cromáticas para explorar armonías de color.</p>
+        </a>
+        <a href="https://fonts.google.com/" target="_blank" rel="noopener" class="recurso-card">
+          <div class="recurso-icon">🔤</div>
+          <h4>Google Fonts</h4>
+          <p>Catálogo de fuentes tipográficas de libre uso para proyectos de clase.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pie de Página -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>&copy; 2026 DesignLab - Portal Educativo de Diseño Gráfico. Material docente de consulta.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
